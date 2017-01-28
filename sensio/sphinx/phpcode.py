@@ -117,7 +117,7 @@ def php_phpfunction_role(typ, rawtext, text, lineno, inliner, options={}, conten
     return [pnode], []
 
 def setup(app):
-    app.add_config_value('api_url', None, 'env')
+    app.add_config_value('api_url', unicode, 'env')
     app.add_config_value('api_url_pattern', None, 'env')
     app.add_config_value('namespace_separator', '/', 'env')
     app.add_role('namespace', php_namespace_role)
