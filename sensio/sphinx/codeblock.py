@@ -4,6 +4,7 @@
 """
 
 from sphinx.directives.code import CodeBlock
+from docutils.parsers.rst import Directive, directives
 
 """
 A wrapper around the built-in CodeBlock class to always
@@ -15,5 +16,5 @@ class NumberedCodeBlock(CodeBlock):
         return super(NumberedCodeBlock, self).run();
 
 def setup(app):
-    app.add_directive('code-block', NumberedCodeBlock)
-    app.add_directive('sourcecode', NumberedCodeBlock)
+    directives.register_directive('code-block', NumberedCodeBlock)
+    directives.register_directive('sourcecode', NumberedCodeBlock)
